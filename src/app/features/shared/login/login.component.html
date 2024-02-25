@@ -1,0 +1,98 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+
+  <div class="p-5 bg-image" style="
+          background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+          height: 300px;
+          "></div>
+  <!-- Background image -->
+
+  <div class="d-flex justify-content-center">
+    <div class="card w-50 mx-4 mx-md-5 shadow-5-strong" style="
+          margin-top: -100px;
+          background: hsla(0, 0%, 100%, 0.8);
+          backdrop-filter: blur(30px);
+          ">
+      <tabset [justified]="true">
+        <tab heading="Nuevo Usuario">
+          <div class="card-body  py-5 px-md-5">
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-8">
+                <h2 class="fw-bold mb-5">Regístrese</h2>
+                <form [formGroup]="signUpForm">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1" formControlName="primerNombre" class="form-control" />
+                        <label class="form-label" for="form3Example1">Primer nombre</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1" formControlName="segundoNombre" class="form-control" />
+                        <label class="form-label" for="form3Example1">Segundo nombre</label>
+                      </div>
+                    </div>
+                  </div>
+                  
+                
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example2" formControlName="primerApellido" class="form-control" />
+                        <label class="form-label" for="form3Example2">Primer apellido</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example2" formControlName="segundoApellido" class="form-control" />
+                        <label class="form-label" for="form3Example2">Segundo apellido</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" formControlName="email" class="form-control" />
+                    <label class="form-label" for="form3Example3">Correo</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="password" formControlName="contrasena" id="form3Example4" class="form-control" />
+                    <label class="form-label" for="form3Example4">Constraseña</label>
+                  </div>
+                  <button type="submit" (click)="createNewUser()" class="btn btn-primary btn-block mb-4">
+                    Registrarse
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </tab>
+        <tab heading="Usuario registrado">
+          <div class="card-body  py-5 px-md-5">
+            <div class="row d-flex justify-content-center">
+              <div class="col-lg-8">
+                <h2 class="fw-bold mb-5">Bienvenido de nuevo</h2>
+                <form [formGroup]="singInForm">
+                  <!-- 2 column grid layout with text inputs for the first and last names -->
+                    
+                  <div class="form-outline mb-4">
+                    <input type="email" id="form3Example3" formControlName="email" class="form-control" />
+                    <label class="form-label" for="form3Example3">Correo</label>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="password" formControlName="password" id="form3Example4" class="form-control" />
+                    <label class="form-label" for="form3Example4">Constraseña</label>
+                  </div>
+                  <button type="submit" (click)="viewFormInformationSingIn()" class="btn btn-primary btn-block mb-4">
+                    Ingresar
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </tab>
+      </tabset>
+    </div>
+  </div>
+</section>

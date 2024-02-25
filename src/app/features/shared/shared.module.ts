@@ -4,21 +4,30 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { TicketsBuyComponent } from './tickets-buy/tickets-buy.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { AuthService } from './services/auth.service';
+
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    TicketsBuyComponent
+    TicketsBuyComponent,
+    LoginComponent,
+
   ],
   imports: [
     CommonModule,
     AppRoutingModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    ReactiveFormsModule,
+    TabsModule.forRoot()
   ],
   exports :[
-  
-    NavbarComponent
+    NavbarComponent,
+    LoginComponent,
   ]
 })
 export class SharedModule { }
