@@ -5,7 +5,7 @@ import { TicketsBuyComponent } from './tickets-buy/tickets-buy.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { LoginComponent } from './login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AuthService } from './services/auth.service';
 
@@ -23,7 +23,8 @@ import { AuthService } from './services/auth.service';
     AppRoutingModule,
     BsDatepickerModule.forRoot(),
     ReactiveFormsModule,
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    FormsModule
   ],
   exports :[
     NavbarComponent,

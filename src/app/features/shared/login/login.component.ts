@@ -50,7 +50,11 @@ export class LoginComponent {
 
     this.authService.authenticate(userData).subscribe({
       next: (response) => {
-       this.router.navigate(['/compra-tiquetes'])
+        const userStr = JSON.stringify(userData);
+        const tokenStr = JSON.stringify(response);
+        localStorage.setItem('token', tokenStr);
+        localStorage.setItem('userData', userStr )
+       this.router.navigate(['/login/compra-tiquetes'])
       },
       error: (error) => {
         // Manejo del error

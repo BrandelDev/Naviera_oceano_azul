@@ -11,25 +11,27 @@ import { NewUser } from 'src/app/Models/NewUser';
 })
 export class AuthService {
 
-  private _AUTH_USER: string = "";
+  private apiNavieraOceanoAzul: string = "";
 
   constructor(private http: HttpClient) {
-    this._AUTH_USER = environment.AUTH_USER
+    this.apiNavieraOceanoAzul = environment.apiNavieraOceanoAzul;
   }
 
   authenticate(user: UserAuth):Observable<string> {
-    let apiUrl = this._AUTH_USER + 'Auth/Validate';
+    let apiUrl = this.apiNavieraOceanoAzul + 'Auth/Validate';
     return this.http.post<string>(apiUrl, user).pipe(
       catchError((error) => observableThrowError(() => error))
     );
    }
 
    createNewUser(newUser: NewUser){
-    let apiUrl = this._AUTH_USER + 'Auth/CreateUser';
+    let apiUrl = this.apiNavieraOceanoAzul + 'Auth/CreateUser';
     return this.http.post<any>(apiUrl, newUser).pipe(
       catchError((error) => observableThrowError(() => error))
     );
    }
+
+  
 
 
 }

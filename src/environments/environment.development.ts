@@ -1,4 +1,4 @@
 export const environment = {
-    AUTH_USER:"https://localhost:44363/api/"
+    apiNavieraOceanoAzul:"https://localhost:44363/api/"
 
 };

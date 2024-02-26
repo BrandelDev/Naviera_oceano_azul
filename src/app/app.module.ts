@@ -8,12 +8,14 @@ import { HomeComponent } from './features/views/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HttpClientModule } from '@angular/common/http';
+import { SkeletonComponent } from './features/layout/skeleton/skeleton.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    SkeletonComponent,
   ],
   imports: [
     BrowserModule,
