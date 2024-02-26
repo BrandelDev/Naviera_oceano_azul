@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.development';
 import { Observable, catchError, map, throwError as observableThrowError } from 'rxjs';
 import { Rute } from 'src/app/Models/Rute';
 import { Port } from 'src/app/Models/Port';
+import { Ticket } from 'src/app/Models/Ticket';
 @Injectable({
   providedIn: 'root'
 })
@@ -39,6 +40,16 @@ export class TicketsBuyService {
   getRutesById(id:number) { 
     let apiUrl = this.apiNavieraOceanoAzul + 'Rutas/GetRutasByPuerto/' + id;
     return this.http.get<Rute[]>(apiUrl).pipe(
+      map((res) => {
+        return res;
+      }),
+      catchError((error) => observableThrowError(() => error))
+    );
+  }
+
+  createReservation(ticket:Ticket) { 
+    let apiUrl = this.apiNavieraOceanoAzul + 'Rutas/Tiquetes';
+    return this.http.post<Ticket>(apiUrl, ticket).pipe(
       map((res) => {
         return res;
       }),

@@ -9,8 +9,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { HttpClientModule } from '@angular/common/http';
 import { SkeletonComponent } from './features/layout/skeleton/skeleton.component';
+import { registerLocaleData } from '@angular/common';
+import { LOCALE_ID } from '@angular/core';
+import lcoaleESCO from '@angular/common/locales/es-CO';
 
-
+registerLocaleData(lcoaleESCO);
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +28,9 @@ import { SkeletonComponent } from './features/layout/skeleton/skeleton.component
     TabsModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: "es-co" },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
